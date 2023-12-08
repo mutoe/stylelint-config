@@ -4,13 +4,13 @@
   "description": "stylelint + idiomatic-css = ❤️",
   "main": "index.js",
   "dependencies": {
-    "stylelint-order": "^6.0.2"
+    "stylelint-order": "^6.0.3"
   },
   "engines": {
     "node": ">=16"
   },
   "devDependencies": {
-    "standard": "^17.0.0",
+    "standard": "^17.1.0",
     "stylelint": "^15.1.0"
   },
   "peerDependencies": {
