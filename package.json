@@ -1,15 +1,18 @@
 {
-  "name": "stylelint-config-idiomatic-order",
-  "version": "10.0.0",
-  "description": "stylelint + idiomatic-css = ❤️",
+  "name": "@mutoe/stylelint-config-preset-stylus",
+  "version": "1.0.0",
+  "description": "stylus + stylelint + idiomatic-css = ❤️",
   "main": "index.js",
   "dependencies": {
-    "stylelint-order": "^6.0.3"
+    "stylelint-order": "^6.0.3",
+    "stylelint-stylus": "^0.18.0"
   },
   "engines": {
     "node": ">=16"
   },
   "devDependencies": {
+    "@mutoe/eslint-config-preset-basic": "^3.5.3",
+    "eslint": "^8.55.0",
     "standard": "^17.1.0",
     "stylelint": "^15.1.0"
   },
@@ -22,18 +25,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ream88/stylelint-config-idiomatic-order.git"
+    "url": "git+https://github.com/mutoe/stylelint-config-preset-stylus.git"
   },
   "keywords": [
     "stylelint",
     "stylelint-config",
     "idomatic-css",
-    "order"
+    "order",
+    "stylus"
   ],
-  "author": "Mario Uher <uher.mario@gmail.com>",
+  "author": "mutoe <imutoe@gmail.com>",
+  "contributors": [
+    "Mario Uher <uher.mario@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ream88/stylelint-config-idiomatic-order/issues"
+    "url": "https://github.com/mutoe/stylelint-config-preset-stylus/issues"
   },
-  "homepage": "https://github.com/ream88/stylelint-config-idiomatic-order#readme"
+  "homepage": "https://github.com/mutoe/stylelint-config-preset-stylus#readme",
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@mutoe/eslint-config-preset-basic"
+    ]
+  }
 }

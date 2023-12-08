@@ -1,11 +1,11 @@
-# stylelint + idiomatic-css = ❤️
+# stylus stylelint + idiomatic-css = ❤️
 
 Order your styles based on [idiomatic-css](https://github.com/necolas/idiomatic-css#declaration-order).
 
 ## Installation
 
 ```sh
-npm install --save-dev stylelint-config-idiomatic-order
+npm install --save-dev @mutoe/stylelint-config-preset-stylus
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ Set your stylelint config to:
 
 ```json
 {
-  "extends": "stylelint-config-idiomatic-order"
+  "extends": "@mutoe/stylelint-config-preset-stylus"
 }
 ```
 
