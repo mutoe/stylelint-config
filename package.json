@@ -1,32 +1,10 @@
 {
   "name": "@mutoe/stylelint-config-preset-stylus",
   "version": "1.0.0",
-  "description": "stylus + stylelint + idiomatic-css = ❤️",
-  "main": "index.js",
-  "dependencies": {
-    "stylelint-order": "^6.0.3",
-    "stylelint-stylus": "^0.18.0"
-  },
-  "engines": {
-    "node": ">=16"
-  },
-  "devDependencies": {
-    "@mutoe/eslint-config-preset-basic": "^3.5.3",
-    "eslint": "^8.55.0",
-    "standard": "^17.1.0",
-    "stylelint": "^15.1.0"
-  },
-  "peerDependencies": {
-    "stylelint": "^14.0.0 || ^15.0.0"
-  },
-  "scripts": {
-    "lint": "standard --fix index.js test/*.js",
-    "test": "node test/test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mutoe/stylelint-config-preset-stylus.git"
-  },
+  "author": "mutoe <imutoe@gmail.com>",
+  "contributors": [
+    "Mario Uher <uher.mario@gmail.com>"
+  ],
   "keywords": [
     "stylelint",
     "stylelint-config",
@@ -34,19 +12,44 @@
     "order",
     "stylus"
   ],
-  "author": "mutoe <imutoe@gmail.com>",
-  "contributors": [
-    "Mario Uher <uher.mario@gmail.com>"
-  ],
+  "description": "stylus + stylelint + idiomatic-css = ❤️",
   "license": "MIT",
+  "homepage": "https://github.com/mutoe/stylelint-config-preset-stylus#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mutoe/stylelint-config-preset-stylus.git"
+  },
   "bugs": {
     "url": "https://github.com/mutoe/stylelint-config-preset-stylus/issues"
   },
-  "homepage": "https://github.com/mutoe/stylelint-config-preset-stylus#readme",
+  "engines": {
+    "node": ">=16"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js",
+    "lint": "standard --fix index.js test/*.js"
+  },
+  "peerDependencies": {
+    "stylelint": "^14.0.0 || ^15.0.0"
+  },
+  "dependencies": {
+    "stylelint-order": "^6.0.3",
+    "stylelint-stylus": "^0.18.0"
+  },
+  "devDependencies": {
+    "@mutoe/eslint-config-preset-basic": "~3.6.0",
+    "eslint": "^8.55.0",
+    "standard": "^17.1.0",
+    "stylelint": "^15.1.0"
+  },
   "eslintConfig": {
     "root": true,
     "extends": [
       "@mutoe/eslint-config-preset-basic"
-    ]
+    ],
+    "rules": {
+      "unicorn/prefer-array-flat": "off"
+    }
   }
 }

@@ -3,42 +3,42 @@ function trbl (prefix) {
 
   if (prefix) {
     rules.push(prefix)
-    prefix = prefix + '-'
+    prefix = `${prefix}-`
   } else {
     prefix = ''
   }
 
   return rules.concat([
-    prefix + 'top',
-    prefix + 'right',
-    prefix + 'bottom',
-    prefix + 'left'
+    `${prefix}top`,
+    `${prefix}right`,
+    `${prefix}bottom`,
+    `${prefix}left`,
   ])
 }
 
 function minMax (suffix) {
-  return [suffix, 'min-' + suffix, 'max-' + suffix]
+  return [suffix, `min-${suffix}`, `max-${suffix}`]
 }
 
 function border (infix) {
   if (infix) {
-    infix = '-' + infix
+    infix = `-${infix}`
   } else {
     infix = ''
   }
 
   return [
-    'border' + infix,
-    'border' + infix + '-width',
-    'border' + infix + '-style',
-    'border' + infix + '-color',
-    'border' + infix + '-radius'
+    `border${infix}`,
+    `border${infix}-width`,
+    `border${infix}-style`,
+    `border${infix}-color`,
+    `border${infix}-radius`,
   ]
 }
 
 const cssModules = []
   .concat([
-    'composes'
+    'composes',
   ])
 
 const reset = ['all']
@@ -46,14 +46,14 @@ const reset = ['all']
 const positioning = []
   .concat([
     'position',
-    'z-index'
+    'z-index',
   ])
   .concat(trbl())
 
 const displayAndBoxModel = []
   .concat([
     'display',
-    'overflow'
+    'overflow',
   ])
   .concat(minMax('width'))
   .concat(minMax('height'))
@@ -70,7 +70,7 @@ const displayAndBoxModel = []
     'align-items',
     'align-self',
     'justify-content',
-    'order'
+    'order',
   ])
   .concat(trbl('padding'))
   .concat([]
@@ -90,7 +90,7 @@ module.exports = {
         .concat(reset)
         .concat(positioning)
         .concat(displayAndBoxModel),
-      { unspecified: 'bottomAlphabetical' }
-    ]
-  }
+      { unspecified: 'bottomAlphabetical' },
+    ],
+  },
 }

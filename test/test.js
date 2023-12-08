@@ -1,6 +1,6 @@
-const assert = require('assert')
-const fs = require('fs')
-const path = require('path')
+const assert = require('node:assert')
+const fs = require('node:fs')
+const path = require('node:path')
 const stylelint = require('stylelint')
 
 function testConfigFile () {
@@ -18,7 +18,7 @@ function testOrder () {
   return stylelint.lint({
     code: fixture,
     config: require('..'),
-    fix: true
+    fix: true,
   }).then(result => {
     assert.strictEqual(result.errored, false)
     assert.strictEqual(result.output, expected, 'Stylelint output does not equal expected output')
@@ -28,7 +28,8 @@ function testOrder () {
 Promise
   .all([testConfigFile(), testOrder()])
   .then(() => console.log('OK'))
-  .catch(e => {
-    console.error(e.name, e.message)
+  .catch(error => {
+    console.error(error.name, error.message)
+    // eslint-disable-next-line unicorn/no-process-exit
     process.exit(-1)
   })
