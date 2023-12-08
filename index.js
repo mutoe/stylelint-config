@@ -80,6 +80,9 @@ const displayAndBoxModel = [[
   .concat(trbl('margin'))
 
 export default {
+  extends: [
+    'stylelint-stylus/standard',
+  ],
   plugins: 'stylelint-order',
   rules: {
     'order/properties-order': [
@@ -89,5 +92,20 @@ export default {
         .concat(displayAndBoxModel),
       { unspecified: 'bottomAlphabetical' },
     ],
+    'rule-empty-line-before': [
+      'always-multi-line',
+      {
+        except: [
+          'after-single-line-comment',
+          'first-nested',
+        ],
+        ignore: [
+          'after-comment',
+        ],
+      },
+    ],
+    'stylus/pythonic': 'never',
+    'stylus/selector-list-comma-newline-after': 'always-multi-line',
+    'stylus/selector-list-comma': null,
   },
 }
