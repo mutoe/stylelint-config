@@ -31,17 +31,16 @@
     "lint": "standard --fix index.js test/*.js"
   },
   "peerDependencies": {
-    "stylelint": "^14.0.0 || ^15.0.0"
+    "stylelint": "^16.0.0"
   },
   "dependencies": {
-    "stylelint-order": "^6.0.3",
-    "stylelint-stylus": "^0.18.0"
+    "stylelint-order": "^6.0.4",
+    "stylelint-stylus": "^1.0.0"
   },
   "devDependencies": {
     "@mutoe/eslint-config-preset-basic": "~3.6.0",
     "eslint": "^8.55.0",
-    "standard": "^17.1.0",
-    "stylelint": "^15.1.0"
+    "standard": "^17.1.0"
   },
   "eslintConfig": {
     "root": true,
