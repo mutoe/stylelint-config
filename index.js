@@ -79,7 +79,7 @@ const displayAndBoxModel = [[
     .concat(border('left')))
   .concat(trbl('margin'))
 
-module.exports = {
+export default {
   plugins: 'stylelint-order',
   rules: {
     'order/properties-order': [

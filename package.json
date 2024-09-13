@@ -25,7 +25,8 @@
   "engines": {
     "node": ">=20"
   },
-  "main": "index.js",
+  "type": "module",
+  "module": "index.js",
   "scripts": {
     "prepare": "simple-git-hooks",
     "lint": "eslint --fix .",

@@ -1,7 +1,5 @@
-const { defineConfig } = require('@mutoe/eslint-config')
+import { defineConfig } from '@mutoe/eslint-config'
 
-module.exports = defineConfig({
-  rules: {
-    'unicorn/prefer-module': 'off',
-  },
+export default defineConfig({
+  rules: {},
 })

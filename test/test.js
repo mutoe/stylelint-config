@@ -1,37 +1,31 @@
-/* eslint-disable no-console,unicorn/prefer-top-level-await */
-const assert = require('node:assert')
-const fs = require('node:fs')
-const path = require('node:path')
-const process = require('node:process')
-const stylelint = require('stylelint')
+/* eslint-disable no-console */
+import assert from 'node:assert'
+import fs from 'node:fs'
+import path from 'node:path'
+import stylelint from 'stylelint'
+import stylelintConfig from '../index.js'
 
 function testConfigFile() {
-  assert.doesNotThrow(() => {
-    require(path.join(__dirname, '..', 'index.js'))
+  assert.doesNotThrow(async () => {
+    await import(path.join(import.meta.dirname, '..', 'index.js'))
   })
 
   return Promise.resolve()
 }
 
 function testOrder() {
-  const fixture = fs.readFileSync(path.join(__dirname, 'fixture.css'), 'utf8')
-  const expected = fs.readFileSync(path.join(__dirname, 'expected.css'), 'utf8')
+  const fixture = fs.readFileSync(path.join(import.meta.dirname, 'fixture.css'), 'utf8')
+  const expected = fs.readFileSync(path.join(import.meta.dirname, 'expected.css'), 'utf8')
 
   return stylelint.lint({
     code: fixture,
-    config: require('..'),
+    config: stylelintConfig,
     fix: true,
   }).then(result => {
-    assert.strictEqual(result.errored, false)
-    assert.strictEqual(result.output, expected, 'Stylelint output does not equal expected output')
+    assert.equal(result.errored, false)
+    assert.equal(result.code, expected, 'Stylelint output does not equal expected output')
   })
 }
 
-Promise
-  .all([testConfigFile(), testOrder()])
-  .then(() => console.log('OK'))
-  .catch(error => {
-    console.error(error.name, error.message)
-    // eslint-disable-next-line unicorn/no-process-exit
-    process.exit(-1)
-  })
+await Promise.all([testConfigFile(), testOrder()])
+console.log('OK')
