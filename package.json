@@ -30,7 +30,7 @@
   "scripts": {
     "prepare": "simple-git-hooks",
     "lint": "eslint --fix .",
-    "test": "node test/test.js"
+    "test": "vitest run"
   },
   "peerDependencies": {
     "stylelint": "^16.0.0"
@@ -43,7 +43,8 @@
     "@mutoe/eslint-config": "~3.5.0-1",
     "eslint": "^9.10.0",
     "lint-staged": "^15.2.10",
-    "simple-git-hooks": "^2.11.1"
+    "simple-git-hooks": "^2.11.1",
+    "vitest": "^2.1.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",
