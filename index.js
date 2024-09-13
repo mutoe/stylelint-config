@@ -105,7 +105,8 @@ export default {
       },
     ],
     'stylus/pythonic': 'never',
-    'stylus/selector-list-comma-newline-after': 'always-multi-line',
+    'stylus/selector-list-comma-newline-after': null,
+    'stylus/selector-list-comma-newline-before': 'never-multi-line',
     'stylus/selector-list-comma': null,
   },
 }
