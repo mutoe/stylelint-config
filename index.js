@@ -1,10 +1,11 @@
-function trbl (prefix) {
+function trbl(prefix) {
   const rules = []
 
   if (prefix) {
     rules.push(prefix)
     prefix = `${prefix}-`
-  } else {
+  }
+  else {
     prefix = ''
   }
 
@@ -16,14 +17,15 @@ function trbl (prefix) {
   ])
 }
 
-function minMax (suffix) {
+function minMax(suffix) {
   return [suffix, `min-${suffix}`, `max-${suffix}`]
 }
 
-function border (infix) {
+function border(infix) {
   if (infix) {
     infix = `-${infix}`
-  } else {
+  }
+  else {
     infix = ''
   }
 
@@ -36,25 +38,22 @@ function border (infix) {
   ]
 }
 
-const cssModules = []
-  .concat([
-    'composes',
-  ])
+const cssModules = [[
+  'composes',
+]].flat()
 
 const reset = ['all']
 
-const positioning = []
-  .concat([
-    'position',
-    'z-index',
-  ])
+const positioning = [[
+  'position',
+  'z-index',
+]].flat()
   .concat(trbl())
 
-const displayAndBoxModel = []
-  .concat([
-    'display',
-    'overflow',
-  ])
+const displayAndBoxModel = [[
+  'display',
+  'overflow',
+]].flat()
   .concat(minMax('width'))
   .concat(minMax('height'))
   .concat([
@@ -73,8 +72,7 @@ const displayAndBoxModel = []
     'order',
   ])
   .concat(trbl('padding'))
-  .concat([]
-    .concat(border())
+  .concat([border()].flat()
     .concat(border('top'))
     .concat(border('right'))
     .concat(border('bottom'))
@@ -85,8 +83,7 @@ module.exports = {
   plugins: 'stylelint-order',
   rules: {
     'order/properties-order': [
-      []
-        .concat(cssModules)
+      [cssModules].flat()
         .concat(reset)
         .concat(positioning)
         .concat(displayAndBoxModel),

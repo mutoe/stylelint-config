@@ -1,9 +1,11 @@
+/* eslint-disable no-console,unicorn/prefer-top-level-await */
 const assert = require('node:assert')
 const fs = require('node:fs')
 const path = require('node:path')
+const process = require('node:process')
 const stylelint = require('stylelint')
 
-function testConfigFile () {
+function testConfigFile() {
   assert.doesNotThrow(() => {
     require(path.join(__dirname, '..', 'index.js'))
   })
@@ -11,7 +13,7 @@ function testConfigFile () {
   return Promise.resolve()
 }
 
-function testOrder () {
+function testOrder() {
   const fixture = fs.readFileSync(path.join(__dirname, 'fixture.css'), 'utf8')
   const expected = fs.readFileSync(path.join(__dirname, 'expected.css'), 'utf8')
 

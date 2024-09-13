@@ -1,6 +1,8 @@
 {
   "name": "@mutoe/stylelint-config-preset-stylus",
   "version": "1.0.0",
+  "description": "stylus + stylelint + idiomatic-css = ❤️",
+  "license": "MIT",
   "author": "mutoe <imutoe@gmail.com>",
   "contributors": [
     "Mario Uher <uher.mario@gmail.com>"
@@ -12,8 +14,6 @@
     "order",
     "stylus"
   ],
-  "description": "stylus + stylelint + idiomatic-css = ❤️",
-  "license": "MIT",
   "homepage": "https://github.com/mutoe/stylelint-config-preset-stylus#readme",
   "repository": {
     "type": "git",
@@ -23,12 +23,13 @@
     "url": "https://github.com/mutoe/stylelint-config-preset-stylus/issues"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "main": "index.js",
   "scripts": {
-    "test": "node test/test.js",
-    "lint": "standard --fix index.js test/*.js"
+    "prepare": "simple-git-hooks",
+    "lint": "eslint --fix .",
+    "test": "node test/test.js"
   },
   "peerDependencies": {
     "stylelint": "^16.0.0"
@@ -38,17 +39,16 @@
     "stylelint-stylus": "^1.0.0"
   },
   "devDependencies": {
-    "@mutoe/eslint-config-preset-basic": "~3.6.0",
-    "eslint": "^8.55.0",
-    "standard": "^17.1.0"
+    "@mutoe/eslint-config": "~3.5.0-1",
+    "eslint": "^9.10.0",
+    "lint-staged": "^15.2.10",
+    "simple-git-hooks": "^2.11.1"
   },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@mutoe/eslint-config-preset-basic"
-    ],
-    "rules": {
-      "unicorn/prefer-array-flat": "off"
-    }
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "pre-push": "pnpm test"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
