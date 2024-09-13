@@ -5,7 +5,7 @@ Order your styles based on [idiomatic-css](https://github.com/necolas/idiomatic-
 ## Installation
 
 ```sh
-npm install --save-dev @mutoe/stylelint-config-preset-stylus
+npm install --save-dev @mutoe/stylelint-config
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ Set your stylelint config to:
 
 ```json
 {
-  "extends": "@mutoe/stylelint-config-preset-stylus"
+  "extends": "@mutoe/stylelint-config"
 }
 ```
 

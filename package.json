@@ -1,26 +1,31 @@
 {
-  "name": "@mutoe/stylelint-config-preset-stylus",
-  "version": "1.0.0",
-  "description": "stylus + stylelint + idiomatic-css = ❤️",
+  "name": "@mutoe/stylelint-config",
+  "version": "2.0.0",
+  "description": "stylelint + idiomatic-css = ❤️",
   "license": "MIT",
   "author": "mutoe <imutoe@gmail.com>",
   "contributors": [
-    "Mario Uher <uher.mario@gmail.com>"
+    "Mario Uher <uher.mario@gmail.com>",
+    "cedric-ruiu <cedric.ruiu@gmail.com>"
   ],
   "keywords": [
     "stylelint",
     "stylelint-config",
     "idomatic-css",
     "order",
-    "stylus"
+    "sass",
+    "stylus",
+    "vue",
+    "unocss",
+    "tailwind"
   ],
-  "homepage": "https://github.com/mutoe/stylelint-config-preset-stylus#readme",
+  "homepage": "https://github.com/mutoe/stylelint-config#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mutoe/stylelint-config-preset-stylus.git"
+    "url": "git+https://github.com/mutoe/stylelint-config.git"
   },
   "bugs": {
-    "url": "https://github.com/mutoe/stylelint-config-preset-stylus/issues"
+    "url": "https://github.com/mutoe/stylelint-config/issues"
   },
   "engines": {
     "node": ">=20"
@@ -36,6 +41,12 @@
     "stylelint": "^16.0.0"
   },
   "dependencies": {
+    "postcss": "^8.4.45",
+    "postcss-html": "^1.7.0",
+    "postcss-scss": "^4.0.9",
+    "postcss-stylus": "^0.0.1",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-order": "^6.0.4",
     "stylelint-stylus": "^1.0.0"
   },

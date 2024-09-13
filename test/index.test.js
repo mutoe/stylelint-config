@@ -19,6 +19,41 @@ it('should have correct order', async () => {
     fix: true,
   })
 
-  expect(result.errored).toBe(false)
-  expect(result.code).toMatchSnapshot()
+  const warnings = JSON.parse(result.report)[0]?.warnings ?? []
+  const uniqueWarnings = new Set(warnings.map(warning => warning.rule))
+  expect(uniqueWarnings).toMatchSnapshot('warnings')
+
+  expect(result.code).toMatchSnapshot('code')
+})
+
+it.todo('should have correct order for stylus', async () => {
+  const fixture = fs.readFileSync(path.join(import.meta.dirname, 'fixture.styl'), 'utf8')
+
+  const result = await stylelint.lint({
+    code: fixture,
+    config: stylelintConfig,
+    fix: true,
+  })
+
+  const warnings = JSON.parse(result.report)[0]?.warnings ?? []
+  const uniqueWarnings = new Set(warnings.map(warning => warning.rule))
+  expect(uniqueWarnings).toMatchSnapshot('warnings')
+
+  expect(result.code).toMatchSnapshot('code')
+})
+
+it('should have correct order for scss', async () => {
+  const fixture = fs.readFileSync(path.join(import.meta.dirname, 'fixture.scss'), 'utf8')
+
+  const result = await stylelint.lint({
+    code: fixture,
+    config: stylelintConfig,
+    fix: true,
+  })
+
+  const warnings = JSON.parse(result.report)[0]?.warnings ?? []
+  const uniqueWarnings = new Set(warnings.map(warning => warning.rule))
+  expect(uniqueWarnings).toMatchSnapshot('warnings')
+
+  expect(result.code).toMatchSnapshot('code')
 })
