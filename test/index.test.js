@@ -13,8 +13,13 @@ it('should not throw', async () => {
 it('should have correct order', async () => {
   const fixture = fs.readFileSync(path.join(import.meta.dirname, 'fixture.css'), 'utf8')
 
-  const result = await stylelint.lint({
+  let result = await stylelint.lint({
     code: fixture,
+    config: stylelintConfig,
+    fix: true,
+  })
+  result = await stylelint.lint({
+    code: result.code,
     config: stylelintConfig,
     fix: true,
   })
@@ -29,8 +34,13 @@ it('should have correct order', async () => {
 it.todo('should have correct order for stylus', async () => {
   const fixture = fs.readFileSync(path.join(import.meta.dirname, 'fixture.styl'), 'utf8')
 
-  const result = await stylelint.lint({
+  let result = await stylelint.lint({
     code: fixture,
+    config: stylelintConfig,
+    fix: true,
+  })
+  result = await stylelint.lint({
+    code: result.code,
     config: stylelintConfig,
     fix: true,
   })
@@ -45,8 +55,13 @@ it.todo('should have correct order for stylus', async () => {
 it('should have correct order for scss', async () => {
   const fixture = fs.readFileSync(path.join(import.meta.dirname, 'fixture.scss'), 'utf8')
 
-  const result = await stylelint.lint({
+  let result = await stylelint.lint({
     code: fixture,
+    config: stylelintConfig,
+    fix: true,
+  })
+  result = await stylelint.lint({
+    code: result.code,
     config: stylelintConfig,
     fix: true,
   })

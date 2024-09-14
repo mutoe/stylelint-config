@@ -45,6 +45,7 @@ html {
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -72,6 +73,8 @@ hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+  width: fit-content;
+  width: -moz-fit-content;
 }
 
 h1, h2, h3, h4, h5, h6 {

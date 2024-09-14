@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "stylelint + idiomatic-css = ❤️",
   "license": "MIT",
   "author": "mutoe <imutoe@gmail.com>",
@@ -14,7 +14,6 @@
   "keywords": [
     "stylelint",
     "stylelint-config",
-    "idomatic-css",
     "order",
     "sass",
     "stylus",
@@ -34,16 +33,18 @@
     "node": ">=20"
   },
   "type": "module",
+  "main": "index.js",
   "module": "index.js",
   "scripts": {
     "prepare": "simple-git-hooks",
     "lint": "eslint --fix .",
-    "test": "vitest run"
+    "test": "NODE_OPTIONS=--no-deprecation vitest run"
   },
   "peerDependencies": {
     "stylelint": "^16.0.0"
   },
   "dependencies": {
+    "@stylistic/stylelint-config": "^2.0.0",
     "postcss": "^8.4.45",
     "postcss-html": "^1.7.0",
     "postcss-scss": "^4.0.9",
