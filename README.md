@@ -4,7 +4,6 @@
 
 - Based on Stylelint v16
 - Support lint Sass language (extend `stylelint-config-standard-scss`)
-- Support lint Stylus language (extend `stylelint-stylus/standard`)
 - Support lint HTML files (extend stylelint-config-html)
 - Support lint Vue files (including Sass, extend stylelint-config-html)
 - Support Tailwind rules

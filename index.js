@@ -9,7 +9,7 @@ export default {
     'stylelint-order',
   ],
   extends: [
-    'stylelint-stylus/standard',
+    // 'stylelint-stylus/standard',
     'stylelint-config-standard-scss',
     '@stylistic/stylelint-config',
   ],
@@ -26,10 +26,10 @@ export default {
     'at-rule-empty-line-before': ['always', {
       ignore: ['first-nested', 'blockless-after-same-name-blockless', 'after-comment'],
     }],
-    'stylus/pythonic': 'never',
-    'stylus/selector-list-comma-newline-after': null,
-    'stylus/selector-list-comma-newline-before': 'never-multi-line',
-    'stylus/selector-list-comma': null,
+    // 'stylus/pythonic': 'never',
+    // 'stylus/selector-list-comma-newline-after': null,
+    // 'stylus/selector-list-comma-newline-before': 'never-multi-line',
+    // 'stylus/selector-list-comma': null,
 
     // Support VueJS rules
     'selector-pseudo-class-no-unknown': [true, { ignorePseudoClasses: ['deep', 'global'] }],
@@ -40,9 +40,9 @@ export default {
     'scss/at-rule-no-unknown': [true, {
       ignoreAtRules: ['apply', 'config', 'layer', 'responsive', 'screen', 'tailwind', 'unocss', 'variants'],
     }],
-    'stylus/at-rule-no-unknown': [true, {
-      ignoreAtRules: ['apply', 'config', 'layer', 'responsive', 'screen', 'tailwind', 'unocss', 'variants'],
-    }],
+    // 'stylus/at-rule-no-unknown': [true, {
+    //   ignoreAtRules: ['apply', 'config', 'layer', 'responsive', 'screen', 'tailwind', 'unocss', 'variants'],
+    // }],
     // There must always be parentheses in mixin calls, even if no arguments are passed, like functions
     'scss/at-mixin-argumentless-call-parentheses': 'always',
 
