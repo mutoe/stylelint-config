@@ -1,15 +1,16 @@
-import { appearance } from './groups/appearance'
-import { boxModel } from './groups/box-model'
-import { interaction } from './groups/interaction'
-import { layout } from './groups/layout'
-import { positioning } from './groups/positioning'
-import { svgPresentation } from './groups/svg-presentation'
-import { transition } from './groups/transition'
-import { typography } from './groups/typography'
+import { appearance } from './groups/appearance.js'
+import { boxModel } from './groups/box-model.js'
+import { interaction } from './groups/interaction.js'
+import { layout } from './groups/layout.js'
+import { positioning } from './groups/positioning.js'
+import { svgPresentation } from './groups/svg-presentation.js'
+import { transition } from './groups/transition.js'
+import { typography } from './groups/typography.js'
 
 export const propertyGroups = [
   ['composes'],
   ['all'],
+  ['content'],
   positioning,
   layout,
   boxModel,

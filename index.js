@@ -1,6 +1,6 @@
-import { getOrderRules } from 'src/order-config.js'
+import { getOrderRules } from './src/order-config.js'
 
-export { propertyGroups } from 'src/order-config.js'
+export { propertyGroups } from './src/order-config.js'
 
 /** @type {import('stylelint').Config} */
 export default {
@@ -10,8 +10,16 @@ export default {
   ],
   extends: [
     // 'stylelint-stylus/standard',
+    'stylelint-config-standard-vue',
     'stylelint-config-standard-scss',
+    'stylelint-config-standard-vue/scss',
     '@stylistic/stylelint-config',
+  ],
+  overrides: [
+    {
+      files: ['**/*.{vue,html}'],
+      customSyntax: 'postcss-html',
+    },
   ],
   rules: {
     ...getOrderRules('warning'),
@@ -47,5 +55,6 @@ export default {
     'scss/at-mixin-argumentless-call-parentheses': 'always',
 
     '@stylistic/max-line-length': null,
+    '@stylistic/indentation': [2, { baseIndentLevel: 0 }],
   },
 }
